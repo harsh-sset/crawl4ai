@@ -1,0 +1,24 @@
+name: Checksum Code Action
+
+# Example workflow that uses the reusable PR review workflow
+# This demonstrates the default comprehensive review
+
+on:
+  pull_request:
+    types: [opened, synchronize, ready_for_review, reopened]
+
+jobs:
+  comprehensive-review:
+    name: Comprehensive PR Review
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Run Checksum Action
+        uses: harsh-sset/checksum-action@python
+        with:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          APP_ID: ${{ secrets.APP_ID }}
+          APP_PRIVATE_KEY: ${{ secrets.APP_PRIVATE_KEY }}
+        
