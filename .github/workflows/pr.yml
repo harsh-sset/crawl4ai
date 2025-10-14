@@ -18,7 +18,6 @@ jobs:
       - name: Run Checksum Action
         uses: harsh-sset/checksum-action@python
         with:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           APP_ID: ${{ secrets.APP_ID }}
           APP_PRIVATE_KEY: ${{ secrets.APP_PRIVATE_KEY }}
         
