@@ -6,6 +6,10 @@ name: Checksum Code Action
 on:
   pull_request:
     types: [opened, synchronize, ready_for_review, reopened]
+    
+permissions:
+  contents: read # Default for most workflows
+  pull-requests: write # Required to add comments on pull requests
 
 jobs:
   comprehensive-review:
